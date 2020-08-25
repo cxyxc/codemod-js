@@ -1,9 +1,9 @@
 {
-  "name": "codemod",
+  "name": "codemod-js",
   "version": "0.1.0",
-  "description": "Codemod",
+  "description": "codemod javascript typescript",
   "bin": {
-    "codemod": "./bin/codemod.js"
+    "codemod-js": "./bin/codemod.js"
   },
   "files": [
     "bin",
