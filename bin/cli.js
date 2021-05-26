@@ -26,16 +26,26 @@ const babylonConfig = path.join(__dirname, './babylon.config.json');
 const ignoreConfig = path.join(__dirname, './codemod.ignore');
 
 const transformers = [
-  'anonymous-component-to-realname',
-];
+  // export 匿名组件转实名
+  // 'anonymous-component-to-realname',
 
+  // xxx.getModel('xxx') 汇总
+  // 'every-model-no-used',
+
+  // Models 目录汇总
+  'every-models',
+];
 
 async function ensureGitClean() {
   let clean = false;
   try {
     clean = await isGitClean();
   } catch (err) {
-    if (err && err.stderr && err.stderr.toLowerCase().includes('not a git repository')) {
+    if (
+      err &&
+      err.stderr &&
+      err.stderr.toLowerCase().includes('not a git repository')
+    ) {
       clean = true;
     }
   }
@@ -139,7 +149,6 @@ async function transform(transformer, parser, filePath, options) {
     }
   }
 }
-
 
 /**
  * options
