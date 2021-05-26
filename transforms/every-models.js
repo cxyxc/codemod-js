@@ -20,7 +20,7 @@ module.exports = (file, api, options) => {
         pathNode.basename(file.path) +
           '-' +
           path.parent.parent.parent.node.key.name +
-          '-' +
+          '+' +
           path.parent.node.value.value,
       );
     });
